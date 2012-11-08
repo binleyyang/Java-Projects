@@ -56,6 +56,33 @@ public class Poker {
 			}
 			
 			if(userInput.equals("-t4") || userInput.equals("-test4")) {
+				Scanner input2 = new Scanner(System.in);
+				
+				System.out.println("Please enter the first hand to be evaluated: ");
+				String hand1 = input2.next();
+				System.out.println("Please enter the second hand to be evaluated: ");
+				String hand2 = input2.next();
+				
+				String eval1 = classify(hand1);
+				String eval2 = classify(hand2);
+				int score1 = calculate(eval1);
+				int score2 = calculate(eval2);
+				int score3 = determine(hand1);
+				int score4 = determine(hand2);
+				
+				if (score1 > score2) 
+					System.out.println("The first hand " + hand1 + " is a " + classify(hand1) + " and is stronger than the second hand " + hand2 + " which is a " + classify(hand2) + ".");
+				else if (score1 < score2)
+					System.out.println("The second hand " + hand2 + " is a " + classify(hand2) + " and is stronger than the first hand " + hand1 + " which is a " + classify(hand1) + ".");
+				else {
+					if (score3 > score4)
+						System.out.println("The first hand " + hand1 + " is a " + classify(hand1) + " and is stronger than the second hand " + hand2 + " which is a " + classify(hand2) + ".");
+					else if (score3 < score4)
+						System.out.println("The second hand " + hand2 + " is a " + classify(hand2) + " and is stronger than the first hand " + hand1 + " which is a " + classify(hand1) + ".");
+					else {
+						System.out.println("The two hands are of equal strength: " + classify(hand1));
+					}
+				}
 				
 			}
 			
@@ -225,7 +252,52 @@ public class Poker {
 	// -t4 or -test4 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public static int determine (String a) {
-		Arraylist<String>
+		ArrayList<String> hand = new ArrayList<String>();
+		hand.add(a);
+		
+		char[] x = new char[hand.get(0).length()];
+		
+		for (int count = 0; count < hand.get(0).length(); count++) {
+			x[count] = Character.toLowerCase(hand.get(0).charAt(count));
+		}
+		
+		int score = 0;
+		
+		ArrayList<Character> calc = new ArrayList<Character>();
+		calc.add((char) 2);
+		calc.add('3');
+		calc.add('4');
+		calc.add('5');
+		calc.add('6');
+		calc.add('7');
+		calc.add('8');
+		calc.add('9');
+		calc.add('t');
+		calc.add('j');
+		calc.add('q');
+		calc.add('k');
+		calc.add('a');
+		
+		for (int i = 0; i < x.length; i += 2) {
+			score += (calc.indexOf(x[i]) + 1);
+		}
+		return score;
+	}
+	
+	public static int calculate (String a) {
+		ArrayList<String> calc = new ArrayList<String>();
+		calc.add("High Card");
+		calc.add("1 Pair");
+		calc.add("2 Pair");
+		calc.add("3 of a Kind");
+		calc.add("Straight");
+		calc.add("Flush");
+		calc.add("Full House");
+		calc.add("4 of a Kind");
+		calc.add("Straigh Flush");
+		
+		return calc.indexOf(a) + 1;
+		
 	}
 }
 	

@@ -7,7 +7,6 @@ public class NaturalNumbers {
 			if(i % 3 == 0 || i % 5 == 0) 
 				sum += i;
 		}
-		
 		System.out.println("The sum of all natural numbers less than 1000 that are multiples of 3 and 5 is " + sum + ".");
 	}
 
