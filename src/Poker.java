@@ -179,7 +179,7 @@ public class Poker {
 
 		char[] breakDown = new char[hands.length()];
 			
-		for (int i = 0; i < hands.length(); i++) {
+		for (int i = 0; i < hands.length(); i++) { //separates the string into an array
 			breakDown[i] = Character.toLowerCase(hands.charAt(i));
 		} //printer(breakDown);
 			
@@ -233,8 +233,21 @@ public class Poker {
 					}
 				}
 			}
+			
+			for (int i = 0; i < breakDown2.length; i++) {
+				if (breakDown2[i].equals("14")) 
+					breakDown2[i] = "1";
+			}
+			
+			for (int j = 0; j < 10; j+=2){
+				for (int i = 0; i < 10; i+=2){
+					if (Integer.parseInt(breakDown2[i]) == Integer.parseInt(breakDown2[j])+1){
+						x += 1;
+					}
+				}
+			}
 				
-			if (x == 4) 
+			if (x == 4 || x == 7 || x == 8)  
 				checker += 10;
 				
 			if (breakDown[1] == breakDown[3] && breakDown[3] == breakDown[5] && breakDown[5] == breakDown[7] && breakDown[7] == breakDown[9]) //checker for flush
