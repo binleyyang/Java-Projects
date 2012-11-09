@@ -51,10 +51,9 @@ public class Poker {
 				printer(dealDeck[2]);
 			}
 			
-			if(userInput.equals("-t3") || userInput.equals("-test3")) {
+			if(userInput.equals("-t3") || userInput.equals("-test3")) 
 				checker(); 
-			}
-			
+						
 			if(userInput.equals("-t4") || userInput.equals("-test4")) {
 				Scanner input2 = new Scanner(System.in);
 				
@@ -80,14 +79,11 @@ public class Poker {
 					else if (score3 < score4)
 						System.out.println("The second hand " + hand2 + " is a " + classify(hand2) + " and is stronger than the first hand " + hand1 + " which is a " + classify(hand1) + ".");
 					else {
-						System.out.println("The two hands are of equal strength: " + classify(hand1));
+						System.out.println("The two hands are of equal strength, they are " + classify(hand1) + "s.");
 					}
 				}
-				
 			}
-			
 		}
-		
 	}
 	
 	// -t1 or -test1 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -179,7 +175,7 @@ public class Poker {
 		System.out.println("This hand has a " + result);
 		}
 	
-	public static String classify(String hands) {
+	public static String classify(String hands) { //determine what the hand is
 
 		char[] breakDown = new char[hands.length()];
 			
@@ -244,7 +240,7 @@ public class Poker {
 			if (breakDown[1] == breakDown[3] && breakDown[3] == breakDown[5] && breakDown[5] == breakDown[7] && breakDown[7] == breakDown[9]) //checker for flush
 				checker += 9;
 				
-			String [] handType = {"High Card", "High Card", "High Card", "High Card", "1 Pair", "2 Pair", "3 of a Kind", "High Card", "4 of a Kind", "Flush", "Straight", "Full House", "High Card", "High Card", "High Card", "High Card", "Royal Flush", "High Card", "High Card", "Straight Flush", "High Card", "High Card"};
+			String[] handType = {"High Card", "High Card", "High Card", "High Card", "1 Pair", "2 Pair", "3 of a Kind", "High Card", "4 of a Kind", "Flush", "Straight", "Full House", "High Card", "High Card", "High Card", "High Card", "Royal Flush", "High Card", "High Card", "Straight Flush", "High Card", "High Card"};
 				
 			return handType[(int)checker];
 	}
@@ -297,7 +293,6 @@ public class Poker {
 		calc.add("Straigh Flush");
 		
 		return calc.indexOf(a) + 1;
-		
 	}
 }
 	
