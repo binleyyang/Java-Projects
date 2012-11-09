@@ -260,8 +260,8 @@ public class Poker {
 	
 	// -t4 or -test4 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static int determine (String a) {
-		ArrayList<String> hand = new ArrayList<String>();
+	public static int determine (String a) { //point system to determine which hand is stronger based on the total points of the hand when the two hands are of equal strength
+		ArrayList<String> hand = new ArrayList<String>(); //ranks the strength of each character
 		hand.add(a);
 		
 		char[] x = new char[hand.get(0).length()];
@@ -293,7 +293,7 @@ public class Poker {
 		return score;
 	}
 	
-	public static int calculate (String a) {
+	public static int calculate (String a) { //scores by the types of hand a player has
 		ArrayList<String> calc = new ArrayList<String>();
 		calc.add("High Card");
 		calc.add("1 Pair");
@@ -303,8 +303,8 @@ public class Poker {
 		calc.add("Flush");
 		calc.add("Full House");
 		calc.add("4 of a Kind");
-		calc.add("Straigh Flush");
-		
+		calc.add("Straight Flush");
+		 
 		return calc.indexOf(a) + 1;
 	}
 }
