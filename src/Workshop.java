@@ -4,7 +4,7 @@ public class Workshop {
 	public static void main(String[] args) throws Exception {
 	
 		//conc("Hi", null);
-		System.out.println(addStrings(null, "hello"));
+		System.out.println(addStringsAgain("hi", "hello"));
 	}
 	
 	private static String conc (String a, String b) throws Exception {
@@ -23,6 +23,20 @@ public class Workshop {
 		}
 		catch (Exception e) {
 			System.out.println("Error!");
+		}
+		finally {
+			return result;
+		}
+	}
+	
+	private static String addStringsAgain (String a, String b) {
+		String result = "";
+		try {
+			result = conc(a, b);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			result = "There is an error.";
 		}
 		finally {
 			return result;
