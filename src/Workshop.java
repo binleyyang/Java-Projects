@@ -42,4 +42,29 @@ public class Workshop {
 			return result;
 		}
 	}
+	
+	private static String part5 (String a, String b, int x) throws ExceptionalStudent, ArithmeticException {
+		
+		if (a.equals("Celeste"))
+			throw new ExceptionalStudent("Celeste!");
+		else if (x == 0) {
+			throw new ArithmeticException();
+		}
+		return a + b;
+	}
+	
+	private static int Ted (String a, String b, int x) {
+		try {
+			part5(a, b, x);
+		}
+		catch (ExceptionalStudent e) {
+			System.out.println("First string is Celeste");
+		}
+		catch (ArithmeticException e) {
+			System.out.println("Bad Math!");
+		}
+		finally {
+			return 0;
+		}
+	}
 }
