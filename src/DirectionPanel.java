@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DirectionPanel {
+public class DirectionPanel extends JPanel{
 	
 	private final int WIDTH = 300, HEIGHT = 200;
 	private final int JUMP = 10;
@@ -39,6 +39,7 @@ public class DirectionPanel {
 	private class DirectionListener implements KeyListener {
 		
 		public void keyPressed (KeyEvent event) {
+			
 			System.out.println(event.getKeyCode());
 			switch (event.getKeyCode()) {
 			case KeyEvent.VK_UP:

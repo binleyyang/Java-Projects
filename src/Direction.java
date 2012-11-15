@@ -8,6 +8,7 @@ public class Direction {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.getContentPane().add (new DirectionPanel());
+		frame.setVisible(true);
 		
 	}
 }
