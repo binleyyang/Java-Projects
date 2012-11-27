@@ -8,8 +8,8 @@ import java.awt.event.KeyEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.URL;
 import javax.swing.JPanel;
+import java.net.URL;
 
 public class Lab18Panel extends JPanel {
 
