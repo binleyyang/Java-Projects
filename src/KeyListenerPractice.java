@@ -33,7 +33,7 @@ public class KeyListenerPractice extends JPanel implements MouseListener {
 				card2.setIcon(image);
 			}
 		});
-	
+		
 	}
 	
 	@Override
