@@ -6,6 +6,8 @@ import javax.swing.*;
 
 public class KeyListenerPractice extends JPanel implements MouseListener {
 	
+	JButton b;
+	
 	public KeyListenerPractice() {
 		
 		setLayout(new BorderLayout());
@@ -34,7 +36,8 @@ public class KeyListenerPractice extends JPanel implements MouseListener {
 			}
 		});
 		
-	}
+		}
+	
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {}
