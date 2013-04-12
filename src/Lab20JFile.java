@@ -1,3 +1,8 @@
+/*
+Francis Hinson, Binley Yang, Hiroyuki Asaga
+Lab20.java, Lab20JFile.java, Lab20JFileTest.java, tester.txt
+*/
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -78,40 +83,4 @@ public class Lab20JFile extends JFrame {
 	      }
 	      return buffer.toString();
 	  }
-
-	public void addFile(String f){
-
-		BufferedWriter bw = null;
-		Random random = new Random();
-		try {
-			bw = new BufferedWriter(new FileWriter(f, true));
-			bw.newLine();
-			for (int i = 0; i <= random.nextInt(10)+10; i++){
-				bw.write(randSring(random, "alskdfjas", 3) + random.nextInt(10));
-				bw.newLine();
-				bw.flush();
-			}
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public void closeFile() {
-		if (file!= null){
-			file.close();
-		}
-	}
-
-	public static String randSring(Random range, String chars, int length) //http://stackoverflow.com/questions/2863852/how-to-generate-a-random-string-in-java
-	{
-	    char[] text = new char[length];
-	    for (int i = 0; i < length; i++)
-	    {
-	        text[i] = chars.charAt(range.nextInt(chars.length()));
-	    }
-	    return new String(text);
-	}
-	
 }

@@ -1,3 +1,8 @@
+/*
+Francis Hinson, Binley Yang, Hiroyuki Asaga
+Lab20.java, Lab20JFile.java, Lab20JFileTest.java, tester.txt
+*/
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,6 +30,7 @@ public class Lab20 {
 		application.read(f); //////////////////////////////////////////////////////////////////////// Part 3
 		System.out.println("This is what the file looks like after the numbers are squared:");
 		application.square(f); ////////////////////////////////////////////////////////////////////// Part 4
+		application.read(f);
 		System.out.println("This is what the file looks like after you add the tokens:");
 		application.add(f); ///////////////////////////////////////////////////////////////////////// Part 2
 		application.read(f);
